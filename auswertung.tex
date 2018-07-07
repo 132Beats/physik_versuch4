@@ -1,0 +1,173 @@
+\newpage
+\section{ Auswertung der Messergebnisse und Fehlerrechnung}
+
+\subsection{Feder-Masse-Pendel}
+
+\subsubsection{Statische Messung}
+Gesucht ist die Federkonstante.
+\newline
+D =: Federkonstante
+\newline
+m =: Masse
+\newline
+g =: Erdbeschleunigung
+\newline
+l =: Auslenkung
+\begin{equation}
+D = \frac{m\cdot g}{l}
+\end{equation}
+Da die Formel nur eine mit Fehlern behaftete Größe beinhaltet (die Auslenkung l), entspricht der relative Fehler der Federhärte dem relativen Fehler der Auslenkung.
+
+\begin{table}[thb]
+	\centering
+	\hline
+	\csvloop{
+		file=tables/D1.csv,
+		no head,
+		column count=3,
+		before reading=\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|},
+			/csv/separator = semicolon,
+			command = \csvlinetotablerow,
+			late after line=\\,
+			late after first line=\\\hline,
+			late after last line=\\\hline,
+			respect percent = true,
+			after reading=\end{tabular}
+	}
+	%\caption{Alle Zeitmessungen in Sekunden}
+\end{table}
+\begin{table}[thb]
+	\centering
+	\hline
+	\csvloop{
+		file=tables/D2.csv,
+		no head,
+		column count=3,
+		before reading=\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|},
+			/csv/separator = semicolon,
+			command = \csvlinetotablerow,
+			late after line=\\,
+			late after first line=\\\hline,
+			late after last line=\\\hline,
+			respect percent = true,
+			after reading=\end{tabular}
+	}
+	%\caption{Alle Zeitmessungen in Sekunden}
+\end{table}
+
+\subsubsection{Dynamische Messung}
+Die Schwingungsgleichung der Feder:
+\begin{equation}
+T = 2\pi \sqrt{\frac{m}{D}}
+\end{equation}
+Umgestellt zur Federhärte ergibt sich:
+\begin{equation}
+D = \frac{4\pi^{2}m}{T^{2}}
+\end{equation}
+Da die Formel nur eine mit Fehlern behaftete Größe beinhaltet (die Periodendauer T), entspricht der relative Fehler der Federhärte dem relativen Fehler der Periodendauer.
+\begin{table}[thb]
+	\centering
+	\hline
+	\csvloop{
+		file=tables/D1d.csv,
+		no head,
+		column count=3,
+		before reading=\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|},
+			/csv/separator = semicolon,
+			command = \csvlinetotablerow,
+			late after line=\\,
+			late after first line=\\\hline,
+			late after last line=\\\hline,
+			respect percent = true,
+			after reading=\end{tabular}
+	}
+	%\caption{Alle Zeitmessungen in Sekunden}
+\end{table}
+
+\begin{table}[thb]
+	\centering
+	\hline
+	\csvloop{
+		file=tables/D2d.csv,
+		no head,
+		column count=3,
+		before reading=\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|},
+			/csv/separator = semicolon,
+			command = \csvlinetotablerow,
+			late after line=\\,
+			late after first line=\\\hline,
+			late after last line=\\\hline,
+			respect percent = true,
+			after reading=\end{tabular}
+	}
+	%\caption{Alle Zeitmessungen in Sekunden}
+\end{table}
+
+\subsection{Mathematisches Pendel}
+Gesucht ist die Erdbeschleunigung.
+\newline
+g =: Erdbeschleunigung
+\newline
+l =: Länge des Pendels
+\newline
+T =: Periodendauer
+\newline
+Die Schwingungsgleichung des Pendels:
+\begin{equation}
+T = 2\pi \sqrt{\frac{l}{g}}
+\end{equation}
+Umgestellt zur Erdbeschleunigung ergibt sich:
+\begin{equation}
+g = \frac{4\pi^{2}l}{T^{2}}
+\end{equation}
+Da die Formel zwei mit Fehlern behaftete Größen beinhaltet (die Periodendauer T und die Pendellänge l), entspricht der relative Fehler der Erdbeschleunigung der Summe der relativen Fehler der Periodendauer und der Pendellänge.
+\begin{table}[thb]
+	\centering
+	\hline
+	\csvloop{
+		file=tables/g.csv,
+		no head,
+		column count=3,
+		before reading=\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|},
+			/csv/separator = semicolon,
+			command = \csvlinetotablerow,
+			late after line=\\,
+			late after first line=\\\hline,
+			late after last line=\\\hline,
+			respect percent = true,
+			after reading=\end{tabular}
+	}
+	%\caption{Alle Zeitmessungen in Sekunden}
+\end{table}
+%\subsubsection{Vergleich des Gesamtergebnisses mit der Erwartung und dem ersten Versuch}
+%Beim Galton-Brett wurde als Idealergebnis eine Normalverteilung der Eisenkugeln in den Ausgabefächern erwartet. Jedoch ist %bereits bei der Durchführung des Versuches eine deutliche Verschiebung der Werte auf die linke Seite aufgefallen:
+
+%\begin{figure}[htb]
+%    \centering
+%    \includesvg[width=\textwidth]{diagrams/500_vs_1_vs_ideal.svg}
+%    \caption[Grafische Darstellung der Verteilung]{Grafische Darstellung des Erwartungswertes, Gesamtergebnis und Ergebnis aus %dem ersten Versuch}
+%\end{figure}
+
+%Wie der Grafik zu entnehmen ist, ist die Abweichung zwischen den Ergebnissen des ersten Versuches und der Erwartungskurve sehr %groß. Dies liegt, wie in der Versuchsanleitung beschrieben, daran, dass sich eine Binominalverteilung erst für große %Wiederholungen bildet:
+%\begin{quotation}
+ %   \centering
+ %   \glqq Eine solche Verteilung ist allerdings erst dann zu beobachten, wenn viele Kugeln diesen Prozess durchlaufen haben. %Eine Einzelmessung wird uns kaum Informationen über diesen Prozess geben.\grqqy
+%    \newline \textit{- Anleitung zum Physikpraktikum, Abschnitt 1.3}
+%\end{quotation}
+
+%\begin{table}[htb]
+%    \centering
+%    \csvloop{
+%    file=tables/differenz_galton.csv,
+%    column count=15,
+%    before reading=\begin{tabular}{|l|llllllllllllll|}\hline,
+%    /csv/separator = semicolon,
+%    command = \csvlinetotablerow,
+%    late after line=\\,
+%    late after last line=\\\hline,
+%    after reading=\end{tabular}
+%    }
+%    \caption{Darstellung der Differenz zwischen Erwartung und Ergebnis}
+%\end{table}
+
+
