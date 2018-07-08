@@ -1,29 +1,24 @@
 \section{Durchführung der Messung}
 
-\subsection{Feder-Masse-Pendel}
-Während des Versuchs wurden die Auslenkungen verschiedener Massen notiert sowie 5 Messungen der zeit für eine bestimmte Anzahl an Schwingungen.
+\subsection{Längenmessungen am Fallrad}
+Während des Versuchs wurden die verschiedener Längen, Breiten und Tiefen des Fallrads notiert und 5 Mal wiederholt.
+Die Masse wurde auf 517(+-1) Gramm gewogen.
 \newline
-m =: Angehängte Masse
 \newline
-l =: Auslenkung
+l(i) =: Länge in der i-ten Messung
 \newline
-n =: Anzahl der Perioden
+m =: Mittelwert der Messungen
 \newline
-t(i) =: Zeit von n Perioden im i-ten Versuch
-\newline
-m =: Mittelwert der Zeitmessungen
-\newline
-s =: Standardabweichung der Zeitmessungen
+s =: Standardabweichung der Messungen
 \newline
 s(m) =: Standardabweichung des Mittelwerts
-\subsubsection{Feder Nr. 1}
 \begin{table}[thb]
   \centering
   \hline
   \csvloop{
-    file=tables/Feder1.csv,
+    file=tables/maxmess.csv,
     no head,
-    column count=11,
+    column count=9,
     before reading=\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|},
     /csv/separator = semicolon,
     command = \csvlinetotablerow,
@@ -35,30 +30,10 @@ s(m) =: Standardabweichung des Mittelwerts
   }
   %\caption{Alle Zeitmessungen in Sekunden}
 \end{table}
-\subsubsection{Feder Nr. 2}
-\begin{table}[thb]
-	\centering
-	\hline
-	\csvloop{
-		file=tables/Feder2.csv,
-		no head,
-		column count=11,
-		before reading=\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|},
-			/csv/separator = semicolon,
-			command = \csvlinetotablerow,
-			late after line=\\,
-			late after first line=\\\hline,
-			late after last line=\\\hline,
-			respect percent = true,
-			after reading=\end{tabular}
-	}
-%\caption{Alle Zeitmessungen in Sekunden}
-\end{table}
 
-\subsection{Mathematisches Pendel}
-In diesem Experiment wurden an 5 verschieden langen Pendeln 10 Periodendauern gemessen.
+\subsection{Zeitmessungen des schwingenden Rades}
+In diesem Experiment wurden 5 Mal 20 Schwingungen des Rades, während es auf einer Schneide hing, gemessen.
 \newline
-l =: Länge des Pendels
 \newline
 n =: Anzahl der Perioden
 \newline
@@ -73,9 +48,9 @@ s(m) =: Standardabweichung des Mittelwerts
 	\centering
 	\hline
 	\csvloop{
-		file=tables/mpendel.csv,
+		file=tables/maxtime.csv,
 		no head,
-		column count=10,
+		column count=9,
 		before reading=\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|},
 			/csv/separator = semicolon,
 			command = \csvlinetotablerow,
